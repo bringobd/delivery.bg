@@ -9,38 +9,39 @@
 :root{--c:#0CEDE9;--b:#1A7EDB;--g:linear-gradient(135deg,#0CEDE9,#1A7EDB);--bg:#f2f4f8;--sf:#fff;--sf2:#f0f2f6;--br:#e2e6ed;--tx:#0f1117;--mu:#7a828f;--sw:260px;--hh:68px}
 body.dark{--bg:#0a0a0a;--sf:#141414;--sf2:#1e1e1e;--br:#272727;--tx:#fff;--mu:#888}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;overflow-x:hidden;transition:background .25s,color .25s}
+body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;overflow-x:hidden}
+.no-theme-transition,.no-theme-transition *{transition:none!important}
 
 .global-theme-btn{position:fixed;top:12px;right:12px;width:40px;height:40px;background:var(--sf2);border:1px solid var(--br);border-radius:10px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;transition:all .2s;z-index:10001;color:var(--tx)}
 .global-theme-btn:hover{border-color:var(--c)}
 
 /* FULLPAGE */
-.fp{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;background:linear-gradient(145deg,#0d0d0d,#0a0a0a);color:#fff;overflow:auto;padding:20px}
+.fp{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;background:var(--bg);color:var(--tx);overflow:auto;padding:20px}
 .fp.hidden{display:none}
 .wlc{text-align:center;max-width:460px;padding:40px;width:100%}
 .wlc-logo{font-size:88px;animation:fl 2.5s ease-in-out infinite;display:block;margin-bottom:22px}
 @keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
 .wlc-brand{font-size:50px;font-weight:900;background:var(--g);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:3px;margin-bottom:8px}
-.wlc-sub{font-size:15px;color:#777;margin-bottom:40px;line-height:1.6}
+.wlc-sub{font-size:15px;color:var(--mu);margin-bottom:40px;line-height:1.6}
 .wlc-btn{background:var(--g);color:#fff;border:none;border-radius:50px;padding:15px 56px;font-size:17px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;box-shadow:0 10px 30px rgba(12,199,190,.4);transition:all .3s}
 .wlc-btn:hover{transform:scale(1.04)}
 
 /* AUTH */
-.auth-box{background:#141414;border:1px solid #272727;border-radius:26px;padding:32px;width:420px;max-width:calc(100vw - 40px);text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.auth-box{background:var(--sf);border:1px solid var(--br);border-radius:26px;padding:32px;width:420px;max-width:calc(100vw - 40px);text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.25)}
 .auth-logo{font-size:48px;margin-bottom:8px;display:block}
 .auth-ttl{font-size:21px;font-weight:900;background:var(--g);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px}
-.auth-hint{font-size:12px;color:#888;margin-bottom:14px;text-align:left;background:rgba(12,199,190,.07);border:1px solid rgba(12,199,190,.18);border-radius:10px;padding:10px 13px;line-height:1.7}
+.auth-hint{font-size:12px;color:var(--mu);margin-bottom:14px;text-align:left;background:rgba(12,199,190,.07);border:1px solid rgba(12,199,190,.18);border-radius:10px;padding:10px 13px;line-height:1.7}
 .auth-hint b{color:#0CEDE9}
-.ai{display:block;width:100%;background:#1e1e1e;border:1px solid #272727;border-radius:11px;padding:11px 14px;font-size:14px;color:#fff;font-family:'Nunito',sans-serif;outline:none;transition:border-color .2s;margin-bottom:9px}
+.ai{display:block;width:100%;background:var(--sf2);border:1px solid var(--br);border-radius:11px;padding:11px 14px;font-size:14px;color:var(--tx);font-family:'Nunito',sans-serif;outline:none;transition:border-color .2s;margin-bottom:9px}
 .ai:focus{border-color:#0CEDE9}
-.ai::placeholder{color:#555}
+.ai::placeholder{color:var(--mu)}
 .ab{display:block;width:100%;border:none;border-radius:11px;font-size:14px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;transition:all .25s;padding:12px 16px;text-align:center;line-height:1.3}
 .ab.primary{background:var(--g);color:#fff;margin-top:6px}
 .ab.primary:hover{opacity:.88;box-shadow:0 5px 18px rgba(12,199,190,.4)}
-.ab.sec{background:#1e1e1e;color:#fff;border:1px solid #272727;margin-top:8px}
+.ab.sec{background:var(--sf2);color:var(--tx);border:1px solid var(--br);margin-top:8px}
 .ab.sec:hover{border-color:#0CEDE9}
-.auth-div{color:#555;font-size:13px;margin:11px 0}
-.auth-tos{font-size:11px;color:#444;margin-top:14px;line-height:1.5}
+.auth-div{color:var(--mu);font-size:13px;margin:11px 0}
+.auth-tos{font-size:11px;color:var(--mu);margin-top:14px;line-height:1.5}
 .auth-tos a{color:#0CEDE9;cursor:pointer}
 
 /* APP */
@@ -1287,12 +1288,15 @@ document.querySelectorAll('.cc').forEach(c=>c.addEventListener('click',()=>{docu
 document.querySelectorAll('.fc').forEach(c=>c.addEventListener('click',()=>{document.querySelectorAll('.fc').forEach(x=>x.classList.remove('active'));c.classList.add('active');}));
 
 function toggleTheme(){
+  document.body.classList.add('no-theme-transition');
   const d=document.body.classList.toggle('dark');
   const icon=d?'☀️':'🌙';
   const topBtn=document.getElementById('themeBtn');
   const globalBtn=document.getElementById('globalThemeBtn');
   if(topBtn) topBtn.textContent=icon;
   if(globalBtn) globalBtn.textContent=icon;
+  void document.body.offsetHeight;
+  document.body.classList.remove('no-theme-transition');
 }
 
 document.getElementById('globalThemeBtn').addEventListener('click',toggleTheme);
